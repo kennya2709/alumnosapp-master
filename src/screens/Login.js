@@ -6,6 +6,7 @@ import {AuthContext} from "../context/AlumnoContext";
 import { useNavigation } from "../navigation/StackNavigation";
 
 const navigation = useNavigation();
+const {signIn} = useContext(AuthContext);
 
 const initialState ={
     matricula:'',
@@ -19,8 +20,9 @@ const Login = () => {
     const handleChange = (nom, valor) => {
         setDatos({...datos, [nom]:valor});
       }
-    const handleSubmit = ()=>{ 
-     console.log(datos);
+    const handleSubmit = async ()=>{ 
+      await signIn(datos);
+     //console.log(datos);
     }
   return (
     <View style ={styles.login_container}>

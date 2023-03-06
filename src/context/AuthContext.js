@@ -16,7 +16,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const IP = "172.20.101.58";
 
-  const signIn = async (user) => {
+  const signIn = async (datos) => {
     dispatch({ type: 'signIn', payload: alumno });
     try {
       const response = await fetch(`http://${IP}:5000/screens/Login`, {
@@ -25,7 +25,7 @@ export const AuthContextProvider = ({ children }) => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(user),
+        body: JSON.stringify(datos),
       });
       if (response.status == 200) {
         //Obtencion y guardado dentro de la aplicacion los valores obtenidos desde la base de datos
