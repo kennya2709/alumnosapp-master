@@ -14,7 +14,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const [user, setUser] = useState(initialState);
 
-  const IP = "172.20.101.58";
+  const IP = "172.20.10.3";
 
   const signIn = async (datos) => {
     dispatch({ type: 'signIn', payload: alumno });
