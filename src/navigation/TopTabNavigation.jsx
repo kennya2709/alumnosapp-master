@@ -1,7 +1,8 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Calificaciones from '../screens/Calificaciones';
-import Home from '../screens/Home';
-import Settings from '../screens/Settings';
+import Modificar from '../screens/Modificar';
+import Eliminar from '../screens/Eliminar';
+import Inventario from '../screens/Inventario';
+import Insertar from '../screens/Insertar';
 import Icon from "react-native-vector-icons/Ionicons"
 
 const Tab = createMaterialTopTabNavigator();
@@ -9,28 +10,36 @@ const Tab = createMaterialTopTabNavigator();
 const TopTabNavigation =()=> {
   return (
     <Tab.Navigator style={{marginTop: 35}}>
-      <Tab.Screen name="Home" component={Home}
+      <Tab.Screen name="Inventario" component={Inventario}
 options={{
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Inventario',
   tabBarIcon: () =>
-    <Icon name="home" color={'black'} size={26} />
+    <Icon name="list-circle" color={'black'} size={26} />
       }}
       />
       
-      <Tab.Screen name="Calificaciones" component={Calificaciones}
+      <Tab.Screen name="Modificar" component={Modificar}
       options={{
-        tabBarLabel: 'Calificaciones',
+        tabBarLabel: 'Modificar',
         tabBarIcon: () =>
-          <Icon name="library" color={'black'} size={26} />
+          <Icon name="create" color={'black'} size={26} />
             }}
      /> 
-      <Tab.Screen name="Settings" component={Settings} 
+      <Tab.Screen name="Insertar" component={Insertar} 
       options={{
-        tabBarLabel: 'Settings',
+        tabBarLabel: 'Insertar',
         tabBarIcon: () =>
-          <Icon name="settings" color={'black'} size={26} />
+          <Icon name="add-circle" color={'black'} size={26} />
             }}
      />
+
+<Tab.Screen name="Eliminar" component={Eliminar}
+      options={{
+        tabBarLabel: 'Eliminar',
+        tabBarIcon: () =>
+          <Icon name="trash" color={'black'} size={26} />
+            }}
+     /> 
       
     </Tab.Navigator>
   );

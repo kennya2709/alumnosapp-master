@@ -1,5 +1,5 @@
 import Login from "../screens/Login";
-import Settings from "../screens/Settings";
+import Settings from "../screens/Insertar";
 import TopTabNavigation from "./TopTabNavigation";
 
 import { createStackNavigator } from '@react-navigation/stack';

@@ -1,4 +1,4 @@
-import{authInitialState}from"./AlumnoContext";
+import{authInitialState}from"./AuthContext";
 
 export const authReducer = (state, action) => {
     switch(action.type){

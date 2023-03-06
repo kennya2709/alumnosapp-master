@@ -1,32 +1,25 @@
 import React from "react";
 import 'react-native-gesture-handler';
 import { styles } from "./src/theme/theme";
-import {AuthProvider} from "./src/context/AlumnoContext.jsx";
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaView } from "react-native-safe-area-context";
 import StackNavigator from "./src/navigation/StackNavigation";
 import TopTabNavigation from "./src/navigation/TopTabNavigation";
-
+import AuthContextProvider from "./src/context/AuthContext";
 
 
 
 const App = () => {
-    return (
+  return (
+    <AuthContextProvider>
       <NavigationContainer>
-    <SafeAreaView style={styles.container}>
-      <AppState>
-       <StackNavigator/>
-      </AppState>
-    </SafeAreaView>
-    </NavigationContainer>
+        <SafeAreaView style={styles.container}>
+          <AppState>
+            <StackNavigator />
+          </AppState>
+        </SafeAreaView>
+      </NavigationContainer>
+    </AuthContextProvider>
   )
 }
-const AppState=({children})=>{
-  return(
-    <AuthProvider>
-      {children}
-    </AuthProvider>
-  )
-}
-
 export default App; 
